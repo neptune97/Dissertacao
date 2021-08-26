@@ -1,0 +1,169 @@
+---
+author: 'Fernando Anderson Pereira de Souza'
+local: Belo Horizonte
+date_year: '2021'
+date_month: 'Agosto'
+date_day: '08'
+institution: 'Universidade Federal de Minas Gerais'
+inst_short: 'UFMG'
+division: 'FAFICH - FACULDADE  DE CIÊNCIAS HUMANAS'
+coordinator: Prof\textordfeminine. Dr\textordfeminine. Ana Marcela Ardila 
+advisor: Prof. Dr. Cláudio Santiago Dias Júnior
+# If you have more two advisors, un-silence line 7
+altadvisor: 'Prof. Dr. Glauber Loures de Assis'
+examiner:
+- title: Prof\textordfeminine.
+  name: Cristina Maria de Castro
+  degree: Dr\textordfeminine.
+  institution: Universidade Federal de Minas Gerais
+  inst_short: UFMG
+- title: Prof\textordfeminine.
+  name: Taniele Cristina Rui
+  degree: Dr\textordfeminine.
+  institution: Universidade Estadual de Campinas
+  inst_short: UNICAMP
+- title: Prof.
+  name: Manoel Leonardo Wanderley Duarte Santos
+  degree: Dr.
+  institution: Universidade Federal de Minas Gerais
+  inst_short: UFMG
+department: |
+  Programa de Pós-Graduação em Sociologia
+degree: 'Mestre em Sociologia'
+level: 'mestrado'
+doc_type: 'Dissertação'
+title: 'Os efeitos da Conversão Religiosa entre Egressos de Comunidades Terapêuticas: Uma análise comparativa'
+knit: "bookdown::render_book"
+site: bookdown::bookdown_site
+output: 
+  ufscdown::thesis_pdf: 
+    latex_engine: lualatex
+    citation_package: biblatex
+    bib_engine: biber
+#  ufscdown::thesis_gitbook: default
+#  ufscdown::thesis_word: default
+#  ufscdown::thesis_epub: default
+# If you are creating a PDF you'll need to write your preliminary content (e.g.,
+# abstract, acknowledgements) here or use code similar to line 43-44 for the 
+# .RMD files. If you are NOT producing a PDF, you can delete or silence lines 
+# 42-59 in this YAML header.
+abstract: |
+  | As Comunidades Terapêuticas, definidas enquanto centros de terapia focados na recuperação de indivíduos que escolhem por livre e espontânea vontade receberem tratamento para males de ordem mental baseado em vivência comunitária e na transformação de hábitos e comportamentos, ganham cada vez mais espaço no campo das políticas públicas nacionais de cuidado a pessoas que fazem uso abusivo de drogas. Tais instituições costumam empregar no tratamento, entre outras coisas, elementos religiosos e/ou espirituais que quase sempre são atrelados a      incentivos diretos e indiretos à Conversão Religiosa dos internos. Pouco se    sabe, no entanto, sobre o efeito destas práticas na recuperação e manutenção    da abstêmia de egressos desse sistema. Este estudo tentou mensurar tais        efeitos e entender qual papel a Conversão empregou nos casos analisados. Não apenas isso mas também traçar uma gênese dessas instituições no Brasil, tendo como ponto de partida seus encontros e desencontros com instâncias público governamentais e privadas. Parte-se do pressuposto de que, baseado nos princípios da multicausalidade, sua presença não seria necessária ou suficiente para produzir os resultados por ela almejados e que outras condições, como Redes Sociais/de Apoio, seriam mais efetivas.    Os dados para testar as hipóteses aqui formuladas foram obtidos através de     survey on-line aplicado a nível nacional com egressos de Comunidades           Terapêuticas e analisados no software R. A técnica empregada para análise foi   a Qualitative Comparative Analysis (QCA).  Fórmulas causais obtidas revelaram que, entre os pesquisados, a Recuperação era causada pela Ausência de Conversão e  que a Abstêmia acontecia apenas na Presença de Redes de Apoio e Ausência de Conversão. 
+palavras-chave: [Comunidades Terapêuticas, Conversão Religiosa, Políticas Públicas]
+foreignabstract: |
+  `r if(knitr:::is_latex_output()) paste(readLines("00-foreignabstract.Rmd"), 
+  collapse = '\n  ')`
+# If you'd rather include the preliminary content in files instead of inline
+# like below, use a command like that for the abstract above.  Note that a tab 
+# is needed on the line after the `|`.
+keyword: [Therapeutic Communities, Religious Conversion, Public Policy]
+epigrafe: |
+  | Progress
+  | Pushing through the mould
+  | Tracing with my fingers, waking up
+  | Wanting growth
+  | (SOPHIE, Whole New World)
+# Specify the location of the bibliography below
+bibliography: ["bib/dis.bib", "bib/not.bib", "bib/pkgs.bib"]
+link-citations: yes
+urlcolor: red
+pandoc_args: [--wrap=none]
+dedication: |
+  À Maria Aline, minha mãe. 
+thanks: |
+  | Essa dissertação representa, mais do que um trabalho de conclusão, o resultado de um sonho. Em ordem de conseguir realizar o que almejei tive que mudar de estado, morar só pela primeira vez na minha vida e passar por bons bocados. Durante esses dois anos vivi mais experiências do que imaginei e cresci bastante, tanto como pessoa quanto profissionalmente, de forma que não sou mais o mesmo do que quanto entrei. Fico feliz pelo que vivi, pelo que não vivi e pelo futuro que se desvela e sou extremamente grato a todas as pessoas que me ajudaram até aqui. 
+  
+  Agradeço imensamente aos professores que conheci na UFC, em especial Domingos e Jakson que acreditaram em mim e me proporcionaram toda ajuda possível para que eu pudesse me manter durante a graduação e dar meus primeiros passos no mestrado. Vocês foram os pais que eu nunca tive e minha gratidão com vocês será eterna. Obrigado por tudo. Agradeço também à Kleyton Rattes que corrigiu o projeto que enviei ao Programa no período de seleção. Suas pontuações precisas me ajudaram muito e tornaram meu texto muito mais robusto.
+  
+  Agradeço também aos professores que conheci durante o Ensino Médio, em especial Edna e Antoine que despertaram em mim o pensamento crítico e me fizeram tomar gosto pelas humanidades. Obrigado por terem me acompanhado até aqui, pela amizade e pela disposição.
+  
+  No mesmo ensejo agradeço à minha família por, mesmo não entendendo direito o que eu faço, terem me dado o suporte que podiam. Obrigado pelas orações, pelas ligações, pelas mensagens de boa noite e por sempre estarem de portas abertas para me receber.  
+  
+  Também não poderia deixar de fora dos agradecimentos meus amigos que fizeram das tripas coração para me ajudar nesse processo. Agradeço a Mariana, Márcia, Isabel, Janaína, Eduardo, Trajano, Mara Mônica, Bia, Ângela e todos os outros por sempre estarem comigo e criarem uma verdadeira campanha massiva de compartilhamento da minha pesquisa. Vocês conseguiram alegrar até mesmo os dias mais ruins e sou extremamente grato por isso.
+  
+  Agradeço a Eric, meu melhor amigo e meu amor, por ter me acompanhado desde o início (literalmente). Obrigado por ter me consolado quando precisei, por ter se animado comigo, por ter lidado como um santo com a distância que esse processo impôs em nosso relacionamento e por sempre estar ao meu lado, independente do que acontecesse. Essa não é a primeira conquista que comemoro ao seu lado, mas é uma das mais especiais. Te amo.
+  
+  Agradeço também aos professores que conheci na UFMG, em especial Cláudio e Glauber, que me acolheram como orientando, foram extremamente pacientes comigo e me deram insights valiosos para a construção dessa pesquisa, e a Marden e Jorge que viram potencial em mim e me ajudaram a aumentar ainda mais minha bagagem de conhecimentos quantitativos ao me incluírem em seus projetos. Foi um prazer trabalhar com todos vocês e espero que possamos manter contato no futuro.
+  
+  Também sou grato a todas as pessoas que se disponibilizaram a responder a minha pesquisa. Não sei se vocês chegaram a ler este estudo algum dia, mas saibam que sem vocês essa pesquisa não seria possível. 
+  
+  Agradeço, finalmente, a CAPES pelo financiamento.
+
+#If you prefer blank lines between paragraphs, un-silence lines  74-75 (this 
+# requires package tikz)
+---
+
+<!--
+Above is the YAML (YAML Ain't Markup Language) header that includes a lot of 
+metadata used to produce the document.  Be careful with spacing in this header!
+
+If you'd prefer to not include a Dedication, for example, simply delete the 
+section entirely, or silence (add #) them. 
+
+If you have other LaTeX packages you would like to include, delete the # 
+before header-includes and list the packages after hyphens on new lines.
+
+If you'd like to include a comment that won't be produced in your resulting file 
+enclose it in a block like this.
+
+If you receive a duplicate label error after knitting, make sure to delete the 
+index.Rmd file and then knit again.
+-->
+
+```{r include_packages, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, cache = FALSE, message=FALSE, 
+                      warning = FALSE, fig.ext='png', fig.align='center', 
+                      fig.path = "images/", fig.pos = "H", dev = "png", 
+                      dpi = 300, out.width = "60%")
+type <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+# This chunk ensures that the ufscdown package is
+# installed and loaded. This ufscdown package includes
+# the template files for the thesis.
+if(!require(remotes))
+  install.packages("remotes", repos = "http://cran.rstudio.com")
+if(!require(ufscdown))
+  remotes::install_github("lfpdroubi/ufscdown")
+library(ufscdown)
+```
+
+<!-- On ordering the chapter files:
+There are two options:
+1. Name your chapter files in the order in which you want them to appear (e.g., 
+01-Intro, 02-Data, 03-Conclusions). 
+2. Otherwise, you can specify the order in which they appear in the 
+_bookdown.yml (for PDF only).
+
+Do not include 00(two-hyphens)prelim.Rmd and 00-abstract.Rmd in the YAML file--
+they are handled in the YAML above differently for the PDF version.
+-->
+
+<!-- The {.unnumbered} option here means that the introduction will be 
+"Chapter 0." You can also use {-} for no numbers
+on chapters.
+-->
+# Introdução {#intro}
+
+  Entre maio e julho de 2020 um dos assuntos mais comentados do Twitter^[Disponível em: https://bityli.com/rm13V] foi uma coleção de revistinhas infantis evangélicas chamada "Dudão". Lançada pela Editora Vida entre os anos de 1991 e 2000, e com um corpo editorial feito majoritariamente por protestantes, a HQ segue a vida de Dudão, um menino cristão, e seus amigos Binho, Paçoca, Rebeca, Zuca e Pita.
+  
+  Boa parte das histórias se resumem à Dudão ajudando seus amigos, seja com conselhos religiosos ou ações diretas, a saírem das enrascadas que eles se meteram. Dentre as várias histórias disponíveis uma me chamou a atenção. Em _"Elas estão por aí"_ Dudão encontra Binho, seu amigo, chorando desolado em um campo após ter tido suas chinelas roubadas por um garoto de rua. Dudão e Binho passam boa parte da história tentando localizar o dito cujo até que o encontram embaixo de uma ponte. Quando eles tentaram pegar os calçados de volta a criança pediu que não batessem nele e justificou as suas ações falando que "nunca teve uma chinela". Sensibilizados, Binho e Dudão acabam indo conversar com o pastor da igreja deles para saber se o garoto podia ficar no orfanato regido pela instituição. A imagem abaixo é extraída diretamente da revistinha e descreve o evento em questão:
+  
+```{r imagem00, echo = FALSE, fig.cap = " (Em ordem) Binho, Menino de Rua e Dudão conversando com o Pastor", fig.pos = "H", fig.align='center', out.width="60%" }
+
+knitr::include_graphics("images/dudão35.jpg")
+```
+
+\bcenter
+Fonte: Dudão, 1995
+\ecenter
+  
+  O pastor pergunta a criança se "ela quer ser de Jesus" e fala que "com Jesus nunca lhe faltará nada", o que leva a criança a pensar em um belo frango assado e reiterar a sua escolha. Apesar de caricata a história é exemplo de uma prática muito comum no meio cristão brasileiro: embrulhar teologia nas boas ações. 
+  
+  É frequente, principalmente no meio protestante, que as ações de cunho social empregadas sejam também formas de evangelização e anúncio da boa nova^[ Mais informações sobre essa discussão podem ser encontradas em Rezende & Oliveira[-@rezende_as_2014]]. O _modus operandi_ dessas instituições se baseia em, na maioria das vezes, fornecer subsídios morais e espirituais junto com a ajuda material, sendo estes quase sempre ancorados no processo de "aceitar Jesus", em outras palavras, Conversão Religiosa. Dentre as que se utilizam dessas técnicas uma vem ganhando cada vez mais destaque, chegando até mesmo a ser pauta nas eleições de 2020: As _Comunidades Terapêuticas._
+  
+  Essas instituições costumam ofertar acolhimento e cuidado para pessoas que mostram sinais de uso abusivo de drogas^[Neste trabalho opto pelo termo "uso abusivo de drogas" ao invés de "dependência química". Isso acontece, principalmente, pela estigmatização que este segundo termo carrega consigo [@rosa2010uso]. Não é a pretensão deste estudo debater uso de drogas por uma ótica moralista ou patológica, muito menos condenar ninguem. Aqui pretende-se instaurar um diálogo aberto, horizontal e longe de esteriótipos.] por longos períodos por meio de abstêmia e dentro delas é comum que, junto com o cuidado físico e mental, também se ofereça um espiritual que acontece na forma de missas, cultos, leituras da bíblia e incentivo direto/indireto a Conversão. 
+  
+  Tais práticas imbuíram essas instituições de diversas controvérsias, de forma que vários Conselhos e instituições se manifestaram contra elas, sendo essas críticas adereçadas com mais força quando as CT's começaram a receber financimaneto público. Apesar de parecer uma questão relativamente simples, ela está envolta em uma trama mais densa e se demonstra bastante peculiar dado os atores que se movem em sua defesa. 
+  
+  Apesar de tudo isto, algumas perguntas devem ser feitas: Alimentar essas práticas religiosas no contexto do tratamento tem algum efeito prático no resultado final? No meio de tantas argumentações pouco ou quase nada se ouve falar sobre a eficácia dos próprios métodos empregados por estas instituições, principalmente no que corresponde as pessoas que já passaram por esse tipo de tratamento. Como essas pessoas se encontram hoje? Elas continuam abstêmicas? Se sim, a que elas atribuem esse processo? A Conversão que foi oferecida no contexto da Comunidade Terapêutica teve alguma influência no resultado final? E o mais importante: Vale a pena investir nesse tipo de método?
+  
+  Estas e outras indagações moveram a construção desta pesquisa. Nas próximas páginas será possível encontrar debates mais detalhados sobre o que são essas instituições, o que é Conversão e se, de fato, isso teve ou não efeito entre os que passaram por este tipo de tratamento.

@@ -1,0 +1,99 @@
+`r if(knitr:::is_latex_output()) '\\banexos'`
+
+<!--
+If you feel it necessary to include an appendix, it goes here.
+-->
+
+# **SCRIPT DA ANÁLISE**
+```{r script, echo = T, eval=FALSE}
+library (QCA)
+library (readxl)
+library (tidyverse)
+
+#banco de dados
+bd <- read_excel("~/tr_02alpha/Untitled/data/dados_mestrado.xlsx")
+
+#seleção dos dados
+dt <- bd %>% 
+  select(PCT_n, FS06, FS05_n ,R06_n) %>% 
+  drop_na()
+
+#thresholds
+findTh(dt$R06_n, n = 3, hclustm = "complete", distm = "euclidean")
+findTh(dt$FS06, n = 3, hclustm = "complete", distm = "euclidean")
+findTh(dt$PCT_n, n = 3, hclustm = "complete", distm = "euclidean")
+findTh(dt$FS05_n, n = 3, hclustm = "complete", distm = "euclidean")
+
+# calibração
+dt$conv <- calibrate(dt$R06_n, type = "fuzzy", 
+                     thresholds = c(1.5, 2.5, 3.5), 
+                     logistic = T)
+dt$recov <- calibrate(dt$FS06, type = "fuzzy", 
+                      thresholds = c(3.5,6.5,8.5), 
+                      logistic = T)
+dt$abst <- calibrate(dt$PCT_n, type = "fuzzy", 
+                     thresholds = c(2.5,3.5,4.5), 
+                     logistic = T)
+dt$redes <- calibrate(dt$FS05_n, type = "fuzzy", 
+                      thresholds = c(1.0,3.5,5.5), 
+                      logistic = T)
+
+#banco de dados fuzzy
+fuz <- data.frame(dt[,5:8])
+
+
+#truthtable
+t1 <- truthTable(fuz, outcome = "abst",
+                 conditions = c("conv", "redes"),
+                 incl.cut = .8,complete = T, show.cases = T, 
+                 sort.by = c("incl", "n"))
+
+t2 <- truthTable(fuz, outcome = "recov",
+                 conditions = c("conv", "redes"),
+                 incl.cut = .8,complete = T, show.cases = T, 
+                 sort.by = c("incl", "n"))
+
+#minimizações
+minimize(t1, details = T, show.cases = T, use.tilde = F)
+minimize(t2, details = T, show.cases = T, use.tilde = F)
+
+```
+
+
+
+# **QUESTIONÁRIO**
+
+```{r quest, echo =FALSE, out.width="103%" }
+
+knitr::include_graphics("images/quest_final-1.png")
+knitr::include_graphics("images/quest_final-2.png")
+knitr::include_graphics("images/quest_final-3.png")
+knitr::include_graphics("images/quest_final-4.png")
+knitr::include_graphics("images/quest_final-5.png")
+knitr::include_graphics("images/quest_final-6.png")
+knitr::include_graphics("images/quest_final-7.png")
+knitr::include_graphics("images/quest_final-8.png")
+
+```
+
+# **TERMO DE LIVRE ESCLARECIMENTO (TCLE)**
+
+```{r tcle, echo =FALSE, out.width="103%" }
+
+knitr::include_graphics("images/TCLE_ATUALIZADO-1.png")
+knitr::include_graphics("images/TCLE_ATUALIZADO-2.png")
+```
+
+
+# **PARECER DO COMITÊ DE ÉTICA**
+```{r parecer, echo =FALSE, out.width="103%" }
+
+knitr::include_graphics("images/PB_PARECER_CONSUBSTANCIADO_CEP_4607384-1.png")
+knitr::include_graphics("images/PB_PARECER_CONSUBSTANCIADO_CEP_4607384-2.png")
+knitr::include_graphics("images/PB_PARECER_CONSUBSTANCIADO_CEP_4607384-3.png")
+knitr::include_graphics("images/PB_PARECER_CONSUBSTANCIADO_CEP_4607384-4.png")
+```
+
+
+
+`r if(knitr:::is_latex_output()) '\\eanexos'`
