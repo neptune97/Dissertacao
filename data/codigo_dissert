@@ -1,0 +1,41 @@
+library (QCA)
+library (tidyverse)
+
+
+# bin-outcome -------------------------------------------------------------
+
+rf <- rf %>% 
+  mutate(recuperacao_FS_06 = if_else(recuperacao_FS06 > 0.7, 1, 0)) %>% 
+  mutate(abstinencia_PCT01A = if_else(abstinencia_PCT01A = 0.99, 1, 0))
+
+# qca ---------------------------------------------------------------------
+
+
+# recuperacao -------------------------------------------------------------
+
+TT <- truthTable(rf, 
+                 outcome = "recuperacao_FS06",
+                 conditions = c("conversao_R06A", "apoio_redesFSP05", 
+                                "auto_imp_FPS04","IAR"),
+                 incl.cut = 0.8,
+                 show.cases = T,
+                 complete = F,
+                 sort.by = c("incl", "n"))
+
+sol_ps <- minimize(TT, details = TRUE, include = "C")
+
+
+# abstinencia -------------------------------------------------------------
+
+
+TT <- truthTable(rf, 
+                 outcome = "abstinencia_PCT01A ",
+                 conditions = c("conversao_R06A", "apoio_redesFSP05", 
+                                "auto_imp_FPS04","IAR"),
+                 incl.cut = 0.8,
+                 show.cases = T,
+                 complete = F,
+                 sort.by = c("incl", "n"))
+
+sol_ps <- minimize(TT, details = TRUE, include = "C")
+
